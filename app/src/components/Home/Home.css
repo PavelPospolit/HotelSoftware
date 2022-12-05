@@ -1,0 +1,52 @@
+.homepage {
+  margin-top: 105px;
+  height: 100%;
+
+  display: flex;
+}
+
+.homeLinks {
+  height: 100%;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.homeLinks>img {
+  height: 350px;
+  width: auto;
+  margin-bottom: 100px;
+  border: 2px;
+  border-radius: 20px;
+}
+
+.homeRechts {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-direction: column;
+
+  padding-right: 50px;
+  text-align: end;
+}
+
+.homeRechts > button {
+  margin-bottom: 100px;
+  
+  height: 4rem;
+  width: 8rem;
+}
+
+#title {
+  font-size: 6.5rem;
+  font-weight: lighter;
+  margin-bottom: 20px;
+}
+
+#textL {
+  font-size: large;
+  margin-bottom: 30px;
+}

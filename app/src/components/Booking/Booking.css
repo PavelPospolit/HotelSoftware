@@ -1,0 +1,139 @@
+.bookingPage{
+  margin-top: 105px;
+  height: 100%;
+
+  display: flex;
+}
+
+
+.bookingLinks, .bookingRechts{
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start;
+  align-items: center;
+
+  
+  height: 100%;
+  position:  fixed;
+}
+.bookingLinks{
+  width: 50%;
+}
+
+
+
+/* Linke Seite */
+
+.bookingLinks > img {
+  height: 45%;
+  width: auto;
+
+  margin-bottom: 30px;
+}
+
+.zimmerinhalt{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 200px;
+}
+
+.zimmerinhalt > h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.zimmerinhalt> ul  {
+  list-style: none;
+  font-size: 2rem;
+}
+
+
+
+/* Rechte Seite */
+
+.bookingRechts{
+  right: 0;
+  padding-right: 50px;
+  width: calc(50% - 50px);
+}
+
+
+/* Zimmerauswahl Section */
+.zimmerSection{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.bookFilter{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.dateSelectZimmer{
+  display: flex;
+  margin: 25px;
+}
+
+
+#autoTitle{
+  margin-top: 10px;
+}
+
+#checkAuto > .css-ahj2mt-MuiTypography-root, #checkSPA > .css-ahj2mt-MuiTypography-root{
+  font-size: 2rem;
+}
+
+#checkAuto{
+  margin-right: 30px;
+}
+
+#selectPersonen, #selectKlasse {
+  width: 30%;
+  min-width: 150px;
+}
+
+#selectPersonen{
+  margin-right: 30px;
+}
+
+
+  /* Autoauswahl Section */
+
+.bookingRechts > h1 , .autoSection > h1{
+  align-self: flex-end;
+
+  margin-right: 20px;
+}
+
+.autoSection{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.dateSelectAuto{
+  margin: 25px;
+  display: flex;
+}
+
+#selectAuto{
+  width: 20%;
+  align-self: flex-end;
+}
+
+#bookBtn{
+  width: 30%;
+  align-self: center;
+  margin-top: 20px;
+}
+
+
+
+  /* preis Section */
+.sumPriceSection{
+  margin-top: 50px;
+}
