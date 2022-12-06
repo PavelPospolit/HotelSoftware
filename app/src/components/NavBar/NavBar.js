@@ -1,6 +1,6 @@
 import React from 'react'
 import './NavBar.css'
-import logo from 'C:/Users/A113017326/Desktop/React Hotel/Schulprojekt/src/logo.svg'
+import logo from '../../logo.svg'
 
 function NavBar() {
   return (

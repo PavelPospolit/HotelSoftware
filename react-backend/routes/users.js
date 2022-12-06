@@ -9,7 +9,7 @@ var router = express.Router();
 /* GET users listing. */
 router.get('/', async function (req, res, next) {
   dbOperations.getEmployees()
-    .then(employees => res.json(employees))
+    .then(employees => res.json(employees.recordset))
 });
 
 
