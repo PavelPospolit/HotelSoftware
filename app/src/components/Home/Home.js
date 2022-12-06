@@ -2,11 +2,12 @@ import React from 'react'
 import './Home.css'
 import foto from './HotelPic.jpg'
 
+
 function Home() {
   return (
     <div className='homepage'>
       <div className='homeLinks'>
-        <img src={foto}/>
+        <img src={foto} />
 
       </div>
 
