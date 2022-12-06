@@ -1,6 +1,11 @@
 import React from 'react'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import {useNavigate} from 'react-router'
 
 function Login() {
+
+	const navigate = useNavigate();
+
   return (
     <>
     <div className="form-container sign-in-container">
@@ -14,7 +19,7 @@ function Login() {
 			<input type="password" placeholder="Passwort"  value='user password state'/>
 
 			<br></br>
-			<button type="submit">Anmelden</button>
+			<button onClick={()=>{navigate('/')}}>Anmelden</button>
 		</form>
 	</div>
 	<div className="overlay-container">

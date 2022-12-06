@@ -1,8 +1,11 @@
 import React from 'react'
+import { useEffect } from 'react';
 import './NavBar.css'
 import logo from '../../logo.svg'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 function NavBar() {
+  
   return (
     <div className='navBar'>
       <div className='logoBox'>
@@ -11,15 +14,13 @@ function NavBar() {
 
       <div className='navList'>
         <ul className='navLinks'>
-          <li><a href='#'>Home</a></li>
-          <li><a href='#'>Buchen</a></li>
-          <li><a href='#'>Kontakt</a></li>
+          <li><Link to={'/'} className="nav-link"> Home </Link></li>
+          <li><Link to={'/login'} className="nav-link">Login</Link></li>
+          <li><Link to={'/booking'} className="nav-link">Booking</Link></li>
         </ul>
       </div>
 
-      {/* <div className='profileBox'>
-        <img className='profile' src={logo}></img>
-      </div> */}
+    
     </div>
   )
 }

@@ -4,7 +4,7 @@ import './LoginSignUp.css'
 import Login from './Login'
 import SignUp from './SignUp'
 
-function LoginSignUp() {
+function LoginSignUp({funcNav}) {
 
 
   useEffect(()=>{
@@ -19,6 +19,9 @@ function LoginSignUp() {
     signInButton.addEventListener('click', () => {
       container.classList.remove("right-panel-active");
     });
+
+    funcNav(false)
+    
   },[]);
 
   return (
