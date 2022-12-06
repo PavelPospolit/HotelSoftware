@@ -12,10 +12,13 @@ function Home({funcNav}) {
     funcNav(true)
   }, [])
 
+
+
+
   return (
     <div className='homepage'>
       <div className='homeLinks'>
-        <img src={foto}/>
+        <img src={foto} />
 
       </div>
 
