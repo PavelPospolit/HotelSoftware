@@ -1,0 +1,91 @@
+.profilePage {
+  margin-top: 105px;
+  margin-left: 70px;
+  margin-right: 70px;
+  height: max-content;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+.topDiv{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.topDiv > h1 {
+  margin: 50px;
+}
+
+.profileContent {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
+
+.contentLeft, .contentRight {
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+
+  font-size: 2rem;
+}
+
+.left, .right{
+  display: flex;
+  flex-direction: column;
+}
+
+.left {
+  margin-right: 20%;
+}
+
+.profileBtns {
+  width: 80%;
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 20px;
+  margin-right: 50px;
+}
+
+.profileBtns > button {
+  margin-right: 20px;
+}
+
+.bottomDiv{
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bottomDiv > h1{
+  margin: 50px;
+  width: 90%;
+}
+
+#Table > #stornoBtn {
+  margin-top: 30px;
+  margin-left: 30px;
+  width: 100px;
+  align-self: flex-end;
+}
+
+#tableContainer, #tableBooking  {
+  width: 700px;
+}
+
+#Table{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+}
+

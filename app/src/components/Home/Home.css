@@ -1,7 +1,7 @@
 .homepage {
   margin-top: 105px;
-  height: 100%;
-
+  height: max-content;
+  align-self: flex-end;
   display: flex;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .homeRechts > button {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   
   height: 4rem;
   width: 8rem;

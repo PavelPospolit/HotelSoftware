@@ -1,7 +1,7 @@
 const config = {
     user: 'HotelsoftwareUser',
     password: 'HotelsoftwareUser',
-    server: 'BE1BD320',
+    server: 'BE1BD084',
     database: 'Hotelsoftware',
     options: {
         trustServerCertificate: true,

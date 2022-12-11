@@ -17,6 +17,7 @@ function NavBar() {
           <li><Link to={'/'} className="nav-link"> Home </Link></li>
           <li><Link to={'/login'} className="nav-link">Login</Link></li>
           <li><Link to={'/booking'} className="nav-link">Booking</Link></li>
+          <li><Link to={'/profile'} className="nav-link">Profile</Link></li>
         </ul>
       </div>
 

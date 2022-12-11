@@ -4,4 +4,9 @@ html, body, #root, .App {
   flex-direction: column;
 }
 
+#container {
+  height: 100%;
+  display: flex;
+}
+
 
