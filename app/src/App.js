@@ -14,12 +14,11 @@ function App() {
 
   return (
     <Router>
-        <div id='container'>
+        <div id='appContainer'>
         {   showNav &&
             <NavBar/>
         } 
 
-          {/* <Profile /> */}
 
           <Routes>
               <Route exact path='/' element={<Homepage funcNav={setShowNav}/>} />

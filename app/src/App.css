@@ -4,7 +4,7 @@ html, body, #root, .App {
   flex-direction: column;
 }
 
-#container {
+#appContainer {
   height: 100%;
   display: grid;
 }
