@@ -6,7 +6,7 @@ html, body, #root, .App {
 
 #container {
   height: 100%;
-  display: flex;
+  display: grid;
 }
 
 

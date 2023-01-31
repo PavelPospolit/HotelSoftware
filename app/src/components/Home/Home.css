@@ -46,9 +46,11 @@
   font-size: 6.5rem;
   font-weight: lighter;
   margin-bottom: 20px;
+  color: white;
 }
 
 #textL {
   font-size: large;
   margin-bottom: 30px;
+  color: darkblue;
 }

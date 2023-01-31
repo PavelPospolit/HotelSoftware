@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react';
 import './NavBar.css'
-import logo from '../../logo.svg'
+import logo from '../../logoHotel.PNG'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 function NavBar() {

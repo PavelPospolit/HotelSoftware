@@ -21,6 +21,7 @@ function Profile() {
     <div className='profilePage'>
       <div className='topDiv'>
         <h1>Mein Konto:</h1>
+        <hr />
         <div className='profileContent'>
           <div className='contentLeft'>
             <div className='left'>
@@ -51,6 +52,7 @@ function Profile() {
       <div className='bottomDiv'>
 
         <h1>Meine Buchungen:</h1>
+        <hr style={{marginBottom: '30px'}} />
 
         <div id='Table'>
           <TableContainer component={Paper} id='tableContainer'>
