@@ -24,21 +24,6 @@ function LoginSignUp({ funcNav }) {
 
   }, []);
 
-
-  /* ****************placeholder******************** */
-
-  useEffect(() => {
-    const lsID = localStorage.getItem('id');
-    if (lsID) {
-      localStorage.removeItem('id');
-      localStorage.removeItem('Admin');
-    }
-  }, [])
-
-
-
-  /* ****************placeholder******************** */
-
   return (
     <>
       <div style={{ boxSizing: "border-box", background: 'white', display: "flex", justifyContent: 'center', alignItems: "center", flexDirection: 'column', fontFamily: 'Montserrat', height: '100vh', margin: '0px' }}>
