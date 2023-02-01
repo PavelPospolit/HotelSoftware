@@ -14,6 +14,11 @@ function Login() {
 		navigate('/')
 	}
 
+	const handleKeyDown = (event) => {
+		if (event.key === 'Enter') {
+			handleLogIn(getEmail, getPassword, navigate);
+		}
+	};
 
 	return (
 		<>
@@ -21,10 +26,23 @@ function Login() {
 				<form   >
 					<h1 style={{ color: 'black' }}>Anmeldung</h1>
 					<br></br>
-					<input type="text" id='email' placeholder="Benutzername" onChange={(evt) => { setEmail(evt.target.value) }} />
-					<input type="password" id='password' placeholder="Passwort" onChange={(evt) => { setPassword(evt.target.value) }} />
+					<input
+						type="text"
+						id='email'
+						placeholder="Benutzername"
+						onChange={(evt) => { setEmail(evt.target.value) }} />
+					<input
+						type="password"
+						id='password'
+						placeholder="Passwort"
+						onChange={(evt) => { setPassword(evt.target.value) }}
+						onKeyDown={handleKeyDown} />
 					<br></br>
-					<button type='button' onClick={() => { handleLogIn(getEmail, getPassword, navigate); }}>Anmelden</button>
+					<button
+						type='button'
+						onClick={() => { handleLogIn(getEmail, getPassword, navigate); }}>
+						Anmelden
+					</button>
 				</form>
 			</div>
 			<div className="overlay-container">
