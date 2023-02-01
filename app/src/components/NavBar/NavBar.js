@@ -3,10 +3,11 @@ import { useEffect } from 'react';
 import './NavBar.css'
 import logo from '../../logoHotel.PNG'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 
 function NavBar() {
   const lsID = localStorage.getItem('id');
-
+  const navigate = useNavigate();
 
   if (!lsID) {
 
@@ -20,7 +21,6 @@ function NavBar() {
           <ul className='navLinks'>
             <li><Link to={'/'} className="nav-link"> Home </Link></li>
             <li><Link to={'/login'} className="nav-link">Login</Link></li>
-            <li><Link to={'/booking'} className="nav-link">Booking</Link></li>
           </ul>
         </div>
       </div>
@@ -42,7 +42,7 @@ function NavBar() {
             <button onClick={() => {
               localStorage.removeItem('id');
               localStorage.removeItem('Admin');
-              window.location.reload();
+              navigate('/')
             }}>logout</button>
           </ul>
         </div>
