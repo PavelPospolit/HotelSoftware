@@ -1,0 +1,98 @@
+.profilePage {
+  width: 90%;
+
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  justify-self: center;
+  align-self: center;
+}
+
+.topDiv{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+hr {
+  width: 50%;
+  margin: 0;
+  margin-left: 10px;
+  border: none;
+  border-top: 1px solid black;
+  align-self: flex-start;
+}
+
+.topDiv > h1 {
+  margin: 30px;
+  color: darkblue;
+}
+
+
+
+.profileContent {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
+
+.contentLeft, .contentRight {
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+
+  font-size: 2rem;
+}
+
+.left, .right{
+  display: flex;
+  flex-direction: column;
+}
+
+.left {
+  margin-right: 20%;
+}
+
+.profileBtns {
+  width: 80%;
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 20px;
+  margin-right: 50px;
+}
+
+.profileBtns > button {
+  margin-right: 20px;
+}
+
+.bottomDiv{
+  display: flex;
+  flex-direction: column;
+}
+
+.bottomDiv > h1{
+  margin: 30px;
+  color: darkblue;
+}
+
+#Table > #stornoBtn {
+  margin-top: 30px;
+  margin-left: 30px;
+  width: 100px;
+  align-self: flex-end;
+}
+
+#tableContainer, #tableBooking  {
+  width: 700px;
+}
+
+#Table{
+  display: flex;
+  width: 80%;
+  align-self: center;
+
+}
+

@@ -6,6 +6,7 @@ import NavBar from './components/NavBar/NavBar';
 import Homepage from './components/Home/Home';
 import Booking from './components/Booking/Booking'
 import LoginSignUp from './components/LoginSignUp/LoginSignUp';
+import Profile from './components/Profile/Profile';
 
 function App() {
 
@@ -13,14 +14,17 @@ function App() {
 
   return (
     <Router>
-        <div>
+        <div id='appContainer'>
         {   showNav &&
             <NavBar/>
         } 
+
+
           <Routes>
               <Route exact path='/' element={<Homepage funcNav={setShowNav}/>} />
               <Route path='/login' element={<LoginSignUp funcNav={setShowNav}/>} />
               <Route path='/booking' element={<Booking />} />
+              <Route path='/profile' element={<Profile/>} />
           </Routes>
         </div>
       </Router>

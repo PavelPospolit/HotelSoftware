@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react';
 import './NavBar.css'
-import logo from '../../logo.svg'
+import logo from '../../logoHotel.PNG'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 function NavBar() {
@@ -23,8 +23,6 @@ function NavBar() {
             <li><Link to={'/booking'} className="nav-link">Booking</Link></li>
           </ul>
         </div>
-
-
       </div>
     )
   }
@@ -40,6 +38,7 @@ function NavBar() {
           <ul className='navLinks'>
             <li><Link to={'/'} className="nav-link"> Home </Link></li>
             <li><Link to={'/booking'} className="nav-link">Booking</Link></li>
+            <li><Link to={'/profile'} className="nav-link">Profile</Link></li>
             <button onClick={() => {
               localStorage.removeItem('id');
               localStorage.removeItem('Admin');
