@@ -1,8 +1,7 @@
-
 export default function handleLogIn(email, password, navigate) {
     (async () => {
         try {
-            await fetch('/users', {
+            await fetch('http://pavelpospolit.hopto.org/users', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json, text/plain, */*',
@@ -18,6 +17,9 @@ export default function handleLogIn(email, password, navigate) {
                         alert('Wrong Email and Password combination')
                     }
                     else {
+                        localStorage.setItem('id', data.id)
+                        localStorage.setItem('Admin', data.admin)
+                        console.log(data.id)
                         navigate('/')
                     }
                 })
