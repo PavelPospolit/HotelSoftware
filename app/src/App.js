@@ -14,20 +14,18 @@ function App() {
 
   return (
     <Router>
-        <div id='appContainer'>
-        {   showNav &&
-            <NavBar/>
-        } 
-
-
-          <Routes>
-              <Route exact path='/' element={<Homepage funcNav={setShowNav}/>} />
-              <Route path='/login' element={<LoginSignUp funcNav={setShowNav}/>} />
-              <Route path='/booking' element={<Booking />} />
-              <Route path='/profile' element={<Profile/>} />
-          </Routes>
-        </div>
-      </Router>
+      <div id='appContainer'>
+        {showNav &&
+          <NavBar />
+        }
+        <Routes>
+          <Route exact path='/' element={<Homepage funcNav={setShowNav} />} />
+          <Route path='/login' element={<LoginSignUp funcNav={setShowNav} />} />
+          <Route path='/booking' element={<Booking />} />
+          <Route path='/profile' element={<Profile />} />
+        </Routes>
+      </div>
+    </Router>
   )
 }
 
