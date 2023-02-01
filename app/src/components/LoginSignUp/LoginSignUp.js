@@ -4,10 +4,10 @@ import './LoginSignUp.css'
 import Login from './Login'
 import SignUp from './SignUp'
 
-function LoginSignUp({funcNav}) {
+function LoginSignUp({ funcNav }) {
 
 
-  useEffect(()=>{
+  useEffect(() => {
     const signUpButton = document.getElementById('signUp');
     const signInButton = document.getElementById('signIn');
     const container = document.getElementById('container');
@@ -21,17 +21,32 @@ function LoginSignUp({funcNav}) {
     });
 
     funcNav(false)
-    
-  },[]);
+
+  }, []);
+
+
+  /* ****************placeholder******************** */
+
+  useEffect(() => {
+    const lsID = localStorage.getItem('id');
+    if (lsID) {
+      localStorage.removeItem('id');
+      localStorage.removeItem('Admin');
+    }
+  }, [])
+
+
+
+  /* ****************placeholder******************** */
 
   return (
     <>
-    <div style={{boxSizing:"border-box", background:'white', display:"flex", justifyContent:'center', alignItems:"center", flexDirection:'column', fontFamily:'Montserrat', height:'100vh', margin:'0px'}}>
-      <div className="container" id="container">
-        <SignUp />
-        <Login />
+      <div style={{ boxSizing: "border-box", background: 'white', display: "flex", justifyContent: 'center', alignItems: "center", flexDirection: 'column', fontFamily: 'Montserrat', height: '100vh', margin: '0px' }}>
+        <div className="container" id="container">
+          <SignUp />
+          <Login />
+        </div>
       </div>
-    </div>
     </>
   )
 }

@@ -8,6 +8,11 @@ function Login() {
 	const navigate = useNavigate();
 	const [getEmail, setEmail] = useState('')
 	const [getPassword, setPassword] = useState('');
+	let lsID = localStorage.getItem('id');
+
+	if (lsID) {
+		navigate('/')
+	}
 
 
 	return (
@@ -19,7 +24,7 @@ function Login() {
 					<input type="text" id='email' placeholder="Benutzername" onChange={(evt) => { setEmail(evt.target.value) }} />
 					<input type="password" id='password' placeholder="Passwort" onChange={(evt) => { setPassword(evt.target.value) }} />
 					<br></br>
-					<button type='button' onClick={() => { handleLogIn(getEmail, getPassword, navigate) }}>Anmelden</button>
+					<button type='button' onClick={() => { handleLogIn(getEmail, getPassword, navigate); }}>Anmelden</button>
 				</form>
 			</div>
 			<div className="overlay-container">
