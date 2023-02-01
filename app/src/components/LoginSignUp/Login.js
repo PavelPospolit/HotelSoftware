@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { useNavigate } from 'react-router';
 import handleLogIn from '../../functions/handleLogIn'
@@ -10,9 +10,11 @@ function Login() {
 	const [getPassword, setPassword] = useState('');
 	let lsID = localStorage.getItem('id');
 
-	if (lsID) {
-		navigate('/')
-	}
+	useEffect(() => {
+		if (lsID) {
+			navigate('/')
+		}
+	}, [])
 
 	const handleKeyDown = (event) => {
 		if (event.key === 'Enter') {

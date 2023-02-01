@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Booking.css'
 import foto from './HotelZimmer.jpg'
 import Select from 'react-select'
@@ -9,8 +9,16 @@ import Button from '@mui/material/Button';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Table, TableBody, TableHead, TableRow, TableCell } from '@mui/material';
+import { useNavigate } from 'react-router';
 
 function Booking() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!localStorage.getItem('id')) {
+      navigate('/');
+    }
+  }, [])
+
 
   const selectPeople = [
     { value: 1, label: '1 Person' },

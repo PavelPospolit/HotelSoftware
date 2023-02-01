@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Profile.css'
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -7,8 +7,15 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { useNavigate } from 'react-router';
 
 function Profile() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!localStorage.getItem('id')) {
+      navigate('/');
+    }
+  }, [])
 
   const [vorname, setVorname] = useState('test');
   const [nachname, setNachname] = useState('test1');
@@ -52,7 +59,7 @@ function Profile() {
       <div className='bottomDiv'>
 
         <h1>Meine Buchungen:</h1>
-        <hr style={{marginBottom: '30px'}} />
+        <hr style={{ marginBottom: '30px' }} />
 
         <div id='Table'>
           <TableContainer component={Paper} id='tableContainer'>
