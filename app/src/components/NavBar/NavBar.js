@@ -19,8 +19,17 @@ function NavBar() {
 
         <div className='navList'>
           <ul className='navLinks'>
-            <li><Link to={'/'} className="nav-link"> Home </Link></li>
-            <li><Link to={'/login'} className="nav-link">Login</Link></li>
+            <div className='navLeft'>
+              <li><Link to={'/'} className="nav-link"> Home </Link></li>
+            </div>
+            
+
+            <div className='navRight'>
+              <button onClick={() => {
+                navigate('/login')
+              }}><i class="gg-log-in"></i>login</button>
+            </div>
+            {/* <li><Link to={'/login'} className="nav-link">Login</Link></li> */}
           </ul>
         </div>
       </div>
@@ -36,14 +45,23 @@ function NavBar() {
 
         <div className='navList'>
           <ul className='navLinks'>
-            <li><Link to={'/'} className="nav-link"> Home </Link></li>
-            <li><Link to={'/booking'} className="nav-link">Booking</Link></li>
-            <li><Link to={'/profile'} className="nav-link">Profile</Link></li>
-            <button onClick={() => {
-              localStorage.removeItem('id');
-              localStorage.removeItem('Admin');
-              navigate('/')
-            }}>logout</button>
+            <div className='navLeft'>
+              <li><Link to={'/'} className="nav-link"> Home </Link></li>
+              <li><Link to={'/booking'} className="nav-link">Booking</Link></li>
+              <li><Link to={'/profile'} className="nav-link">Profile</Link></li>
+            </div>
+            
+            <div className='navRight'>
+
+              <button onClick={() => {
+                localStorage.removeItem('id');
+                localStorage.removeItem('Admin');
+                navigate('/')
+                }}><i class="gg-log-out"></i>logout</button>
+            </div>
+
+
+            
           </ul>
         </div>
 

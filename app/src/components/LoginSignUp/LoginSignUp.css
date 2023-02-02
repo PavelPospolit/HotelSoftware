@@ -31,7 +31,7 @@ a {
 	margin: 15px 0;
 }
 
-.container > button {
+.container  button {
 	border-radius: 20px;
 	border: 1px solid #c43472c1;
 	background-color: #c43472;

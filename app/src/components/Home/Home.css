@@ -14,7 +14,7 @@
 }
 
 .homeLinks>img {
-  height: 350px;
+  height: 50vh;
   width: auto;
   margin-bottom: 100px;
   border: 2px;
@@ -30,6 +30,7 @@
   flex-direction: column;
 
   padding-right: 50px;
+  padding-left: 50px;
   text-align: end;
 }
 
@@ -43,14 +44,14 @@
 }
 
 #title {
-  font-size: 6.5rem;
+  font-size: 8vh;
   font-weight: lighter;
   margin-bottom: 20px;
   color: white;
 }
 
 #textL {
-  font-size: large;
+  font-size: 2vh;
   margin-bottom: 30px;
   color: darkblue;
 }

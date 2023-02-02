@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+@import url('https://css.gg/log-out.css');
+@import url('https://css.gg/log-in.css');
 
 
 .navBar {
@@ -71,9 +73,47 @@
 }
 
 
+/* Nav Links */
+.navLinks {
+  width: 100%;
+}
+
+.navLeft {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.navRight{
+  margin-right: 40px ;
+  display: flex;
+  align-items: center;
+}
+
+.navRight button{
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+}
+
+i.gg-log-out {
+  margin-right: 20px;
+  align-self: center;
+}
+
+i.gg-log-in{
+  margin-right: 20px;
+  align-self: center;
+}
+
+
 /* Nav Profile */
 
-.profile{
+/* .profile{
   height: 80px;
   width: auto;
-}
+} */
