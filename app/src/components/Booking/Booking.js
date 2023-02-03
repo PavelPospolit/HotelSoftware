@@ -19,7 +19,7 @@ function Booking() {
     }
   }, [])
 
-  const [startDate, setStartDate] = useState(new Date());
+  const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const onChange = (dates) => {
     const [start, end] = dates;
@@ -51,9 +51,9 @@ function Booking() {
 
   return (
     <div className='bookingPage'>
-      <div className='bookingLinks'>
+      <div className='bookingLeft'>
 
-        <h1>Zimmer 1</h1>
+        <h1 id='titelLeft'>Zimmer 1</h1>
         <img src={foto} />
 
         <div className='zimmerinhalt'>
@@ -69,7 +69,7 @@ function Booking() {
 
       </div>
 
-      <div className='bookingRechts'>
+      <div className='bookingRight'>
         <h1>Zimmerauswahl</h1>
         <div className='zimmerSection'>
 
@@ -94,18 +94,20 @@ function Booking() {
 
 
           <div className='dateSelectZimmer'>
-            <DatePicker selected={startDate}
+            <DatePicker 
+              selected={startDate}
               onChange={onChange}
               startDate={startDate}
               endDate={endDate}
               selectsRange
-              className='unstyled-datepicker'/>
-
+              fixedHeight='100px'
+              placeholderText='Zeitraum wählen'
+            />
           </div>
         </div>
 
         <div className='autoSection'>
-          <h1 id='autoTitle'>Auto</h1>
+          <h1>Autoauswahl</h1>
           <Select
             id='selectAuto'
             placeholder='Modell'
@@ -113,8 +115,13 @@ function Booking() {
           />
 
           <div className='dateSelectAuto'>
-            <DatePicker selected={new Date()} />
-            <DatePicker selected={new Date()} />
+          <DatePicker 
+              selected={startDate}
+              onChange={onChange}
+              startDate={startDate}
+              endDate={endDate}
+              selectsRange
+              placeholderText='Zeitraum wählen'/>
           </div>
 
 
