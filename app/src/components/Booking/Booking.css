@@ -1,6 +1,6 @@
 .bookingPage{
   margin-top: 105px;
-
+  
   display: flex;
 }
 
@@ -59,13 +59,14 @@
   width: calc(50% - 50px);
 }
 
-
 /* Zimmerauswahl Section */
 .zimmerSection{
   display: flex;
   flex-direction: column;
   width: 100%;
 }
+
+
 
 .bookFilter{
   display: flex;
@@ -74,10 +75,26 @@
 }
 
 .dateSelectZimmer{
+  width: 90%;
   display: flex;
   margin: 25px;
   margin-bottom: 10px;
+  justify-content: space-between;
+  
 }
+
+
+.react-datepicker-wrapper input{
+  width: 50%;
+}
+
+
+.unstyled-datepicker .react-datepicker__input-container,
+.unstyled-datepicker .react-datepicker__calendar-container {
+  font-family: inherit !important;
+  font-size: inherit !important;
+}
+
 
 
 #autoTitle{

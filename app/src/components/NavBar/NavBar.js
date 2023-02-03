@@ -57,7 +57,11 @@ function NavBar() {
                 localStorage.removeItem('id');
                 localStorage.removeItem('Admin');
                 navigate('/')
-                }}><i class="gg-log-out"></i>logout</button>
+                }}>
+                  <i class="gg-log-out"></i>logout
+                  </button>
+                
+                
             </div>
 
 

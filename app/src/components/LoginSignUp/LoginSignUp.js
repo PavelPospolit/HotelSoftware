@@ -26,7 +26,7 @@ function LoginSignUp({ funcNav }) {
 
   return (
     <>
-      <div style={{ boxSizing: "border-box", background: 'white', display: "flex", justifyContent: 'center', alignItems: "center", flexDirection: 'column', fontFamily: 'Montserrat', height: '100vh', margin: '0px' }}>
+      <div style={{ boxSizing: "border-box", background: 'white', display: "flex", justifyContent: 'center', alignItems: "center", flexDirection: 'column', fontFamily: 'Montserrat', height: '100vh', margin: '0px'}}>
         <div className="container" id="container">
           <SignUp />
           <Login />

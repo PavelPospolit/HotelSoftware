@@ -4,7 +4,10 @@ import foto from './HotelPic.jpg'
 import {useNavigate} from 'react-router'
 
 
+
 function Home({funcNav}) {
+
+  const lsID = localStorage.getItem('id');
 
   const navigate = useNavigate();
 
@@ -27,7 +30,7 @@ function Home({funcNav}) {
 
         <div id='textL'>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
 
-        <button onClick={()=>{navigate('/booking')}} id='bookingBtnHome'>Buchen</button>
+        {lsID ? <button onClick={()=>{navigate('/booking')}} id='bookingBtnHome'>Buchen</button> : <button onClick={()=>{navigate('/login')}} id='bookingBtnHome'>Buchen</button>}
 
       </div>
     </div>

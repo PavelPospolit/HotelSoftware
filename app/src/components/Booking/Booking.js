@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Booking.css'
 import foto from './HotelZimmer.jpg'
 import Select from 'react-select'
@@ -18,6 +18,14 @@ function Booking() {
       navigate('/');
     }
   }, [])
+
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(null);
+  const onChange = (dates) => {
+    const [start, end] = dates;
+    setStartDate(start);
+    setEndDate(end);
+  };
 
 
   const selectPeople = [
@@ -86,8 +94,13 @@ function Booking() {
 
 
           <div className='dateSelectZimmer'>
-            <DatePicker selected={new Date()} />
-            <DatePicker selected={new Date()} />
+            <DatePicker selected={startDate}
+              onChange={onChange}
+              startDate={startDate}
+              endDate={endDate}
+              selectsRange
+              className='unstyled-datepicker'/>
+
           </div>
         </div>
 
