@@ -33,8 +33,8 @@ a {
 
 .container  button {
 	border-radius: 20px;
-	border: 1px solid #c43472c1;
-	background-color: #c43472;
+	border: 1px solid #347ac4c1;
+	background-color: #3464c4;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -156,8 +156,8 @@ input {
 	background: linear-gradient(to right, #FF4B2B, #FF416C); */
 
 	background: #ea0a8e;
-	background: -webkit-linear-gradient(to right, #df697d, #ea0a8e);
-	background: linear-gradient(to right, #df697d, #ea0a8e );
+	background: -webkit-linear-gradient(to right, #6983df, #0a24ea);
+	background: linear-gradient(to right, #6983df, #0a24ea);
 
 
 
