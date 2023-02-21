@@ -36,7 +36,7 @@ html {
 #titelLeft{
   color: darkblue;
   font-weight: bold;
-  font-size: 2vh;
+  font-size: 3vh;
   margin-bottom: 30px;
 }
 
@@ -59,12 +59,12 @@ html {
 }
 
 .zimmerinhalt > h1 {
-  font-size: 1.8vh;
+  font-size: 2.3vh;
 }
 
 .zimmerinhalt> ul  {
   list-style: none;
-  font-size: 1.5vh;
+  font-size: 1.8vh;
   width: 100%;
   margin: 0;
 }
@@ -75,7 +75,7 @@ html {
 
 .bookingRight{
   grid-area: right; 
-  padding-top: 60px;
+  /* padding-top: 60px; */
 }
 
 
@@ -107,7 +107,7 @@ html {
 }
 
 #checkAuto *, #checkSPA *{
-  font-size: 1.5vh;
+  font-size: 2vh;
   color: white;
 }
 
@@ -124,6 +124,7 @@ html {
 
 .dateSelectZimmer input, .dateSelectAuto input{
   text-align: center;
+  margin: 0;
 }
 
 
@@ -134,7 +135,7 @@ html {
   align-self: center;
   color: darkblue;
   font-weight: normal;
-  font-size: 1.5vh;
+  font-size: 2.5vh;
   margin-bottom: 15px;
 
 }
@@ -162,7 +163,7 @@ html {
 
 #bookBtn{
   width: 30%;
-  margin-top: 10vh;
+  margin-top: 6vh;
   align-self: center;
 }
 

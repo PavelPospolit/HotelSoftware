@@ -31,7 +31,7 @@
 }
 
 .logoBox .logo{
-  height: 8vh;
+  height: 9vh;
   width: auto;
   padding-top: 20px;
 }
@@ -67,7 +67,7 @@
   color: #fff;
   line-height: 65px;
 
-  font-size: 2.5vh;
+  font-size: 3vh;
 }
 
 .navList ul li a:hover {
@@ -96,7 +96,7 @@
 .navRight button{
   background-color: transparent;
   border: none;
-  font-size: 2vh;
+  font-size: 2.3vh;
   color: #ffffff;
   cursor: pointer;
   font-family: 'Quicksand', sans-serif;
