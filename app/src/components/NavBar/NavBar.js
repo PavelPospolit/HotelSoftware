@@ -22,7 +22,7 @@ function NavBar() {
             <div className='navLeft'>
               <li><Link to={'/'} className="nav-link"> Home </Link></li>
             </div>
-            
+
 
             <div className='navRight'>
               <button onClick={() => {
@@ -50,22 +50,28 @@ function NavBar() {
               <li><Link to={'/booking'} className="nav-link">Booking</Link></li>
               <li><Link to={'/profile'} className="nav-link">Profile</Link></li>
             </div>
-            
+
             <div className='navRight'>
 
               <button onClick={() => {
-                localStorage.removeItem('id');
-                localStorage.removeItem('Admin');
+                localStorage.removeItem('id')
+                localStorage.removeItem('Admin')
+                localStorage.removeItem('Email')
+                localStorage.removeItem('Vorname')
+                localStorage.removeItem('Nachname')
+                localStorage.removeItem('Straße')
+                localStorage.removeItem('HausNummer')
+                localStorage.removeItem('Ort')
                 navigate('/')
-                }}>
-                  <i class="gg-log-out"></i>logout
-                  </button>
-                
-                
+              }}>
+                <i class="gg-log-out"></i>logout
+              </button>
+
+
             </div>
 
 
-            
+
           </ul>
         </div>
 

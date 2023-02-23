@@ -19,7 +19,12 @@ export default function handleLogIn(email, password, navigate) {
                     else {
                         localStorage.setItem('id', data.id)
                         localStorage.setItem('Admin', data.admin)
-                        console.log(data.id)
+                        localStorage.setItem('Email', data.email)
+                        localStorage.setItem('Vorname', data.vorname)
+                        localStorage.setItem('Nachname', data.nachname)
+                        localStorage.setItem('Straße', data.strasse)
+                        localStorage.setItem('HausNummer', data.hausnr)
+                        localStorage.setItem('Ort', data.ort)
                         navigate('/')
                     }
                 })

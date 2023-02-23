@@ -36,8 +36,8 @@ function Profile() {
               <p>Nachname:</p>
             </div>
             <div className='right'>
-              <p>{vorname}</p>
-              <p>{nachname}</p>
+              <p>{localStorage.getItem('Vorname')}</p>
+              <p>{localStorage.getItem('Nachname')}</p>
             </div>
           </div>
           <div className='contentRight'>
@@ -46,8 +46,8 @@ function Profile() {
               <p>Benutzer-ID:</p>
             </div>
             <div className='right'>
-              <p>{email}</p>
-              <p>{userId}</p>
+              <p>{localStorage.getItem('Email')}</p>
+              <p>{localStorage.getItem('id')}</p>
             </div>
           </div>
         </div>
