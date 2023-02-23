@@ -62,6 +62,7 @@ function NavBar() {
                 localStorage.removeItem('Straße')
                 localStorage.removeItem('HausNummer')
                 localStorage.removeItem('Ort')
+                localStorage.removeItem('PLZ')
                 navigate('/')
               }}>
                 <i class="gg-log-out"></i>logout

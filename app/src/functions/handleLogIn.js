@@ -25,6 +25,7 @@ export default function handleLogIn(email, password, navigate) {
                         localStorage.setItem('Straße', data.strasse)
                         localStorage.setItem('HausNummer', data.hausnr)
                         localStorage.setItem('Ort', data.ort)
+                        localStorage.setItem('PLZ', data.plz)
                         navigate('/')
                     }
                 })
