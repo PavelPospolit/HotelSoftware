@@ -50,6 +50,16 @@ function Profile() {
               <p>{localStorage.getItem('id')}</p>
             </div>
           </div>
+          <div className='contentRight'>
+            <div className='left'>
+              <p>Anschrift:</p>
+              <p>PLZ/ Ort:</p>
+            </div>
+            <div className='right'>
+              <p>{localStorage.getItem('Straße')}, {localStorage.getItem('HausNummer')}</p>
+              <p>{localStorage.getItem('PLZ')}/ {localStorage.getItem('Ort')}</p>
+            </div>
+          </div>
         </div>
         <div className='profileBtns'>
           <button id='passwortBtn'>Passwort ändern</button>
