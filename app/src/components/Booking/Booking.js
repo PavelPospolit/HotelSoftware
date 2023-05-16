@@ -8,7 +8,7 @@ import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { Table, TableBody, TableHead, TableRow, TableCell } from '@mui/material';
+import { Table, TableBody, TableHead, TableRow, TableCell, Input } from '@mui/material';
 import { useNavigate } from 'react-router';
 
 function Booking() {
@@ -58,12 +58,23 @@ function Booking() {
     }
   }, [])
 
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
-  const onChange = (dates) => {
+  const [startDateZ, setStartDateZ] = useState(null);
+  const [endDateZ, setEndDateZ] = useState(null);
+  let differenceZ
+  let daysZ
+  const onChangeZ = (dates) => {
     const [start, end] = dates;
-    setStartDate(start);
-    setEndDate(end);
+    setStartDateZ(start);
+    setEndDateZ(end);
+  };
+  const [startDateC, setStartDateC] = useState(null);
+  const [endDateC, setEndDateC] = useState(null);
+  let differenceC
+  let daysC
+  const onChangeC = (dates) => {
+    const [start, end] = dates;
+    setStartDateC(start);
+    setEndDateC(end);
   };
 
 
@@ -78,6 +89,8 @@ function Booking() {
     { value: 3, label: 'Premium Klasse' }
   ]
 
+  const [autoSelectorDisabled, setAutoSelectorDisabled] = useState(true)
+  const [spaCheck, setSpaCheck] = useState(false)
 
 
 
@@ -117,25 +130,44 @@ function Booking() {
               options={zimmerKlasse}
             />
             <FormGroup row={true}>
-              <FormControlLabel id='checkAuto' control={<Checkbox sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }} />} label='Auto' labelPlacement='start' />
-              <FormControlLabel id='checkSPA' control={<Checkbox sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }} />} label='SPA' labelPlacement='start' />
-
+              <FormControlLabel
+                id='checkAuto'
+                control={<Checkbox sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }} />}
+                label='Auto'
+                labelPlacement='start'
+                onChange={(evt) => {
+                  setAutoSelectorDisabled(!autoSelectorDisabled)
+                }} />
+              <FormControlLabel
+                id='checkSPA'
+                control={<Checkbox sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }} />}
+                label='SPA'
+                labelPlacement='start'
+                onChange={(evt) => {
+                  setSpaCheck(!spaCheck)
+                }} />
             </FormGroup>
           </div>
 
-
-
           <div className='dateSelectZimmer'>
             <DatePicker
-              selected={startDate}
-              onChange={onChange}
-              startDate={startDate}
-              endDate={endDate}
+              selected={startDateZ}
+              onChange={onChangeZ}
+              startDate={startDateZ}
+              endDate={endDateZ}
               selectsRange
               fixedHeight='100px'
               placeholderText='Zeitraum wählen'
             />
           </div>
+
+          {/* HILFSBUTTON UM ANZAHL TAGE FÜR ZIMMER ZU ERMITTELN START */}
+          <Button onClick={() => {
+            differenceZ = ((endDateZ.getTime() - startDateZ.getTime()))
+            daysZ = (Math.ceil(differenceZ / (1000 * 3600 * 24))) + 1
+            console.log(daysZ);
+          }}>HILFSBUTTON ANZ TAGE ZIMMER</Button>
+          {/* HILFSBUTTON UM ANZAHL TAGE FÜR ZIMMER ZU ERMITTELN ENDE */}
         </div>
 
         <div className='autoSection'>
@@ -144,6 +176,7 @@ function Booking() {
             id='selectAuto'
             placeholder='Modell'
             options={autoModell}
+            isDisabled={autoSelectorDisabled}
             onChange={(evt) => {
               setSelectedCar(evt.label.toString())
 
@@ -163,14 +196,22 @@ function Booking() {
 
           <div className='dateSelectAuto'>
             <DatePicker
-              selected={startDate}
-              onChange={onChange}
-              startDate={startDate}
-              endDate={endDate}
+              selected={startDateC}
+              onChange={onChangeC}
+              startDate={startDateC}
+              endDate={endDateC}
               selectsRange
               placeholderText='Zeitraum wählen' />
           </div>
 
+
+          {/* HILFSBUTTON UM ANZAHL TAGE FÜR AUTO ZU ERMITTELN START */}
+          <Button onClick={() => {
+            differenceC = ((endDateC.getTime() - startDateC.getTime()))
+            daysC = (Math.ceil(differenceC / (1000 * 3600 * 24))) + 1
+            console.log(daysC);
+          }}>HILFSBUTTON ANZ TAGE AUTO</Button>
+          {/* HILFSBUTTON UM ANZAHL TAGE FÜR AUTO ZU ERMITTELN ENDE */}
 
           <Button variant="contained" id='bookBtn'>Buchen</Button>
         </div>
