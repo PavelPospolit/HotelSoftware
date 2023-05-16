@@ -12,6 +12,45 @@ import { Table, TableBody, TableHead, TableRow, TableCell } from '@mui/material'
 import { useNavigate } from 'react-router';
 
 function Booking() {
+
+  const autoModell = [
+  ];
+  let [getPriceCar, setPriceCar] = useState();
+  let carData = []
+  let [carDataState, setCarDataState] = useState([])
+  let [getSelectedCar, setSelectedCar] = useState()
+
+
+  useEffect(() => {
+    (async () => {
+      try {
+        await fetch('http://pavelpospolit.hopto.org/cars', {
+          method: 'GET',
+          headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+          }
+        })
+          .then((res) => {
+            return res.json()
+          })
+          .then(data => {
+            for (var i = 0; i <= data.length - 1; i++) {
+              autoModell.push({ value: i + 1, label: data[i].Typ });
+              carData.push(data[i])
+            }
+          })
+      }
+      catch (err) {
+        console.log(err);
+      }
+    })()
+  })
+
+
+
+
   const navigate = useNavigate();
   useEffect(() => {
     if (!localStorage.getItem('id')) {
@@ -29,10 +68,8 @@ function Booking() {
 
 
   const selectPeople = [
-    { value: 1, label: '1 Person' },
-    { value: 2, label: '2 Personen' },
-    { value: 3, label: '3 Personen' },
-    { value: 4, label: '4 Personen' }
+    { value: 1, label: '1 Bett' },
+    { value: 2, label: '2 Betten' }
   ];
 
   const zimmerKlasse = [
@@ -42,12 +79,7 @@ function Booking() {
   ]
 
 
-  const autoModell = [
-    { value: 1, label: 'Cabrio' },
-    { value: 2, label: 'SUV' },
-    { value: 3, label: 'Van' },
-    { value: 4, label: 'Combi' }
-  ]
+
 
   return (
     <div className='bookingPage'>
@@ -76,7 +108,7 @@ function Booking() {
           <div className='bookFilter'>
             <Select
               id='selectPersonen'
-              placeholder='Personenanzahl'
+              placeholder='Anzahl Betten'
               options={selectPeople}
             />
             <Select
@@ -94,7 +126,7 @@ function Booking() {
 
 
           <div className='dateSelectZimmer'>
-            <DatePicker 
+            <DatePicker
               selected={startDate}
               onChange={onChange}
               startDate={startDate}
@@ -112,16 +144,31 @@ function Booking() {
             id='selectAuto'
             placeholder='Modell'
             options={autoModell}
+            onChange={(evt) => {
+              setSelectedCar(evt.label.toString())
+
+            }}
           />
 
+          {/* HILFSBUTTON UM PREIS PRO TAG DES AUTOS FESTZUSTELLEN START */}
+          <Button onClick={() => {
+            for (var i = 0; i <= carData.length - 1; i++) {
+              if (carData[i].Typ === getSelectedCar) {
+                setPriceCar(carData[i].Preis_pro_Tag)
+              }
+            }
+          }}>PREIS PRO TAG ERMITTELN</Button>
+          {/* HILFSBUTTON UM PREIS PRO TAG DES AUTOS FESTZUSTELLEN ENDE */}
+
+
           <div className='dateSelectAuto'>
-          <DatePicker 
+            <DatePicker
               selected={startDate}
               onChange={onChange}
               startDate={startDate}
               endDate={endDate}
               selectsRange
-              placeholderText='Zeitraum wählen'/>
+              placeholderText='Zeitraum wählen' />
           </div>
 
 

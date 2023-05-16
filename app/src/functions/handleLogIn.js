@@ -1,4 +1,5 @@
-export default function handleLogIn(email, password, navigate) {
+export default function handleLogIn(email, password, navigate, CryptoJS) {
+
     (async () => {
         try {
             await fetch('http://pavelpospolit.hopto.org/users', {

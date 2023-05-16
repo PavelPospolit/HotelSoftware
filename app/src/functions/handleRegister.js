@@ -1,8 +1,9 @@
 
-export default function handleRegister(getNewID, getEmail, getVorname, getNachname, getStrasse, getHausnummer, getPLZ, getOrt, getPasswort, getRepPasswort) {
+export default function handleRegister(getNewID, getEmail, getVorname, getNachname, getStrasse, getHausnummer, getPLZ, getOrt, getPasswort, getRepPasswort, CryptoJS) {
     if (getPasswort === getRepPasswort && (
         getNewID && getEmail && getVorname && getNachname && getStrasse && getHausnummer && getPLZ && getOrt && getPasswort
     )) {
+
         (async () => {
             try {
                 await fetch('http://pavelpospolit.hopto.org/registerUser', {

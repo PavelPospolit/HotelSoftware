@@ -31,7 +31,7 @@ function Login() {
 					<input
 						type="text"
 						id='email'
-						placeholder="Benutzername"
+						placeholder="Email"
 						onChange={(evt) => { setEmail(evt.target.value) }} />
 					<input
 						type="password"

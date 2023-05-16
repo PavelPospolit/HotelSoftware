@@ -1,4 +1,5 @@
 export default function handleRegisterID(setNewID, getNewID) {
+
     (async () => {
         try {
             await fetch('http://pavelpospolit.hopto.org/userid', {
