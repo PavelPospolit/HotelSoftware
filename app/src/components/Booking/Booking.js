@@ -17,7 +17,6 @@ function Booking() {
   ];
   let [getPriceCar, setPriceCar] = useState();
   let carData = []
-  let [carDataState, setCarDataState] = useState([])
   let [getSelectedCar, setSelectedCar] = useState()
 
 
@@ -49,7 +48,9 @@ function Booking() {
   })
 
 
+  useEffect(() => {
 
+  })
 
   const navigate = useNavigate();
   useEffect(() => {
@@ -75,6 +76,18 @@ function Booking() {
     const [start, end] = dates;
     setStartDateC(start);
     setEndDateC(end);
+
+    let price
+    for (var i = 0; i <= carData.length - 1; i++) {
+      if (carData[i].Typ === getSelectedCar) {
+        price = carData[i].Preis_pro_Tag;
+      }
+    }
+    differenceC = ((end.getTime() - start.getTime()))
+    daysC = (Math.ceil(differenceC / (1000 * 3600 * 24))) + 1
+    console.log("preisvar: " + price);
+    console.log(daysC);
+    setPriceCar(price * daysC);
   };
 
 
@@ -91,7 +104,6 @@ function Booking() {
 
   const [autoSelectorDisabled, setAutoSelectorDisabled] = useState(true)
   const [spaCheck, setSpaCheck] = useState(false)
-
 
 
   return (
@@ -180,19 +192,9 @@ function Booking() {
             onChange={(evt) => {
               setSelectedCar(evt.label.toString())
 
+
             }}
           />
-
-          {/* HILFSBUTTON UM PREIS PRO TAG DES AUTOS FESTZUSTELLEN START */}
-          <Button onClick={() => {
-            for (var i = 0; i <= carData.length - 1; i++) {
-              if (carData[i].Typ === getSelectedCar) {
-                setPriceCar(carData[i].Preis_pro_Tag)
-              }
-            }
-          }}>PREIS PRO TAG ERMITTELN</Button>
-          {/* HILFSBUTTON UM PREIS PRO TAG DES AUTOS FESTZUSTELLEN ENDE */}
-
 
           <div className='dateSelectAuto'>
             <DatePicker
@@ -201,17 +203,10 @@ function Booking() {
               startDate={startDateC}
               endDate={endDateC}
               selectsRange
-              placeholderText='Zeitraum wählen' />
+              placeholderText='Zeitraum wählen'
+              disabled={autoSelectorDisabled}
+            />
           </div>
-
-
-          {/* HILFSBUTTON UM ANZAHL TAGE FÜR AUTO ZU ERMITTELN START */}
-          <Button onClick={() => {
-            differenceC = ((endDateC.getTime() - startDateC.getTime()))
-            daysC = (Math.ceil(differenceC / (1000 * 3600 * 24))) + 1
-            console.log(daysC);
-          }}>HILFSBUTTON ANZ TAGE AUTO</Button>
-          {/* HILFSBUTTON UM ANZAHL TAGE FÜR AUTO ZU ERMITTELN ENDE */}
 
           <Button variant="contained" id='bookBtn'>Buchen</Button>
         </div>
@@ -221,19 +216,19 @@ function Booking() {
           <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
             <TableHead>
               <TableRow>
-                <TableCell></TableCell>
-                <TableCell align="right"></TableCell>
-                <TableCell align="right"></TableCell>
-                <TableCell align="right"></TableCell>
+                <TableCell>Preis Zimmer</TableCell>
+                <TableCell align="right">Preis Auto</TableCell>
+                <TableCell align="right">Preis Spa</TableCell>
+                <TableCell align="right">Gesamt</TableCell>
               </TableRow>
             </TableHead>
 
             <TableBody>
               <TableRow>
-                <TableCell >erste</TableCell>
-                <TableCell align='right'>zweite</TableCell>
-                <TableCell align='right'>dritte</TableCell>
-                <TableCell align='right'>vierte</TableCell>
+                <TableCell ></TableCell>
+                <TableCell align='right'>{getPriceCar}</TableCell>
+                <TableCell align='right'></TableCell>
+                <TableCell align='right'></TableCell>
               </TableRow>
             </TableBody>
 
@@ -244,7 +239,7 @@ function Booking() {
 
       </div>
 
-    </div>
+    </div >
   )
 }
 
