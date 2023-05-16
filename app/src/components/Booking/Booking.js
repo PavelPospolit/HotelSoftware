@@ -70,23 +70,22 @@ function Booking() {
   };
   const [startDateC, setStartDateC] = useState(null);
   const [endDateC, setEndDateC] = useState(null);
-  let differenceC
-  let daysC
+
   const onChangeC = (dates) => {
     const [start, end] = dates;
+    let price;
+    let differenceC;
+    let daysC;
     setStartDateC(start);
     setEndDateC(end);
 
-    let price
     for (var i = 0; i <= carData.length - 1; i++) {
       if (carData[i].Typ === getSelectedCar) {
         price = carData[i].Preis_pro_Tag;
       }
-    }
-    differenceC = ((end.getTime() - start.getTime()))
-    daysC = (Math.ceil(differenceC / (1000 * 3600 * 24))) + 1
-    console.log("preisvar: " + price);
-    console.log(daysC);
+    };
+    differenceC = ((end.getTime() - start.getTime()));
+    daysC = (Math.ceil(differenceC / (1000 * 3600 * 24))) + 1;
     setPriceCar(price * daysC);
   };
 
@@ -191,8 +190,9 @@ function Booking() {
             isDisabled={autoSelectorDisabled}
             onChange={(evt) => {
               setSelectedCar(evt.label.toString())
-
-
+              setStartDateC(null)
+              setEndDateC(null)
+              setPriceCar(null)
             }}
           />
 
